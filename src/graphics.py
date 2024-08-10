@@ -28,28 +28,6 @@ class Window:
     def draw_line(self, line, fill_color):
         line.draw(self.__canvas, fill_color)
 
-    def create_vertical_lines(self):
-
-        p1_s = Point(self.width / 3, 0)
-        p1_e = Point(self.width / 3, self.height)
-        self.draw_line(Line(p1_s, p1_e), "black")
-
-        p2_s = Point((self.width * 2) / 3, 0)
-        p2_e = Point((self.width * 2) / 3, self.height)
-        self.draw_line(Line(p2_s, p2_e), "black")
-
-    def create_horizontal_lines(self):
-        p1_s = Point(0, self.height / 3)
-        p1_e = Point(self.width, self.height / 3)
-        self.draw_line(Line(p1_s, p1_e), "black")
-
-        p2_s = Point(0, (self.height * 2) / 3)
-        p2_e = Point(self.width, (self.height * 2) / 3)
-        self.draw_line(Line(p2_s, p2_e), "black")
-
-    def create_grid(self):
-        self.create_horizontal_lines()
-        self.create_vertical_lines()
 
 class Point:
     def __init__(self, x, y):
