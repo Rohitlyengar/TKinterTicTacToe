@@ -146,9 +146,18 @@ class Game:
             self.win.draw_circle(midpoint.x, midpoint.y, "black")
 
         if self.check_X_winner(self.grid):
-            self.end_game()
+            self.end_game('X')
         if self.check_O_winner(self.grid):
-            self.end_game()
+            self.end_game('O')
+
+        draw = True
+        for i in range(len(self.grid)):
+            for j in range(len(self.grid[0])):
+                if self.grid[i][j] == '-':
+                    draw = False
+
+        if draw:
+            self.end_game(draw=draw)
 
         if self.turn == 'X':
             print("\nO's Turn!")
@@ -157,8 +166,11 @@ class Game:
 
         self.turn = 'O' if self.turn == 'X' else 'X'
 
-    def end_game(self):
-        messagebox.showinfo(message="X WINS!!!")
+    def end_game(self, winner='X', draw=False):
+        if draw:
+            messagebox.showinfo(message="DRAW!!!")
+        else:
+            messagebox.showinfo(message=f'{winner} WINS!!!')
         choice = messagebox.askokcancel(message="Do you want to play again?")
         if choice:
             python = sys.executable
