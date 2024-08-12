@@ -33,3 +33,6 @@ class Window:
 
     def draw_cross(self, cross, fill_color):
         cross.draw(self.__canvas, fill_color)
+
+    def draw_circle(self, x, y, fill_color):
+        self.__canvas.create_oval(x - 50, y - 50, x + 50, y + 50, outline=fill_color, width=2)

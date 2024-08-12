@@ -1,5 +1,5 @@
 class Point:
-    def __init__(self, x, y):
+    def __init__(self, x=0, y=0):
         self.x = x
         self.y = y
 
@@ -30,4 +30,3 @@ class Cross:
 
         Line(top_l, bot_r).draw(canvas, fill_color)
         Line(top_r, bot_l).draw(canvas, fill_color)
-
