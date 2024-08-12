@@ -11,41 +11,43 @@ class Game:
                     ['-', '-', '-'],
                     ['-', '-', '-']]
 
-    def check_X_winner(self):
-        if self.grid[0][0] == 'X' and self.grid[0][1] == 'X' and self.grid[0][2] == 'X':
+    @staticmethod
+    def check_X_winner(grid):
+        if grid[0][0] == 'X' and grid[0][1] == 'X' and grid[0][2] == 'X':
             return True
-        elif self.grid[1][0] == 'X' and self.grid[1][1] == 'X' and self.grid[1][2] == 'X':
+        elif grid[1][0] == 'X' and grid[1][1] == 'X' and grid[1][2] == 'X':
             return True
-        elif self.grid[2][0] == 'X' and self.grid[2][1] == 'X' and self.grid[2][2] == 'X':
+        elif grid[2][0] == 'X' and grid[2][1] == 'X' and grid[2][2] == 'X':
             return True
-        elif self.grid[0][0] == 'X' and self.grid[1][0] == 'X' and self.grid[2][0] == 'X':
+        elif grid[0][0] == 'X' and grid[1][0] == 'X' and grid[2][0] == 'X':
             return True
-        elif self.grid[0][1] == 'X' and self.grid[1][1] == 'X' and self.grid[2][1] == 'X':
+        elif grid[0][1] == 'X' and grid[1][1] == 'X' and grid[2][1] == 'X':
             return True
-        elif self.grid[0][2] == 'X' and self.grid[1][2] == 'X' and self.grid[2][2] == 'X':
+        elif grid[0][2] == 'X' and grid[1][2] == 'X' and grid[2][2] == 'X':
             return True
-        elif self.grid[0][0] == 'X' and self.grid[1][1] == 'X' and self.grid[2][2] == 'X':
+        elif grid[0][0] == 'X' and grid[1][1] == 'X' and grid[2][2] == 'X':
             return True
-        elif self.grid[0][2] == 'X' and self.grid[1][1] == 'X' and self.grid[2][0] == 'X':
+        elif grid[0][2] == 'X' and grid[1][1] == 'X' and grid[2][0] == 'X':
             return True
         return False
 
-    def check_O_winner(self):
-        if self.grid[0][0] == 'O' and self.grid[0][1] == 'O' and self.grid[0][2] == 'O':
+    @staticmethod
+    def check_O_winner(grid):
+        if grid[0][0] == 'O' and grid[0][1] == 'O' and grid[0][2] == 'O':
             return True
-        elif self.grid[1][0] == 'O' and self.grid[1][1] == 'O' and self.grid[1][2] == 'O':
+        elif grid[1][0] == 'O' and grid[1][1] == 'O' and grid[1][2] == 'O':
             return True
-        elif self.grid[2][0] == 'O' and self.grid[2][1] == 'O' and self.grid[2][2] == 'O':
+        elif grid[2][0] == 'O' and grid[2][1] == 'O' and grid[2][2] == 'O':
             return True
-        elif self.grid[0][0] == 'O' and self.grid[1][0] == 'O' and self.grid[2][0] == 'O':
+        elif grid[0][0] == 'O' and grid[1][0] == 'O' and grid[2][0] == 'O':
             return True
-        elif self.grid[0][1] == 'O' and self.grid[1][1] == 'O' and self.grid[2][1] == 'O':
+        elif grid[0][1] == 'O' and grid[1][1] == 'O' and grid[2][1] == 'O':
             return True
-        elif self.grid[0][2] == 'O' and self.grid[1][2] == 'O' and self.grid[2][2] == 'O':
+        elif grid[0][2] == 'O' and grid[1][2] == 'O' and grid[2][2] == 'O':
             return True
-        elif self.grid[0][0] == 'O' and self.grid[1][1] == 'O' and self.grid[2][2] == 'O':
+        elif grid[0][0] == 'O' and grid[1][1] == 'O' and grid[2][2] == 'O':
             return True
-        elif self.grid[0][2] == 'O' and self.grid[1][1] == 'O' and self.grid[2][0] == 'O':
+        elif grid[0][2] == 'O' and grid[1][1] == 'O' and grid[2][0] == 'O':
             return True
         return False
 
@@ -140,10 +142,10 @@ class Game:
         else:
             self.win.draw_circle(midpoint.x, midpoint.y, "black")
 
-        if self.check_X_winner():
+        if self.check_X_winner(self.grid):
             print("X Wins!")
             return
-        if self.check_O_winner():
+        if self.check_O_winner(self.grid):
             print("O Wins!")
             return
 
