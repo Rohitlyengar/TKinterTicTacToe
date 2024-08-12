@@ -57,16 +57,25 @@ class Game:
             midpoint.y = (0 + (self.height / 3)) / 2
 
             if event.x <= (self.width / 3):
+                if self.grid[0][0] != '-':
+                    print("Cannot Place!\nTry Again!")
+                    return
                 print("Top Left")
                 midpoint.x = 0 + (self.width / 3) / 2
                 self.grid[0][0] = self.turn
 
             elif event.x <= (self.width * (2 / 3)):
+                if self.grid[0][1] != '-':
+                    print("Cannot Place!\nTry Again!")
+                    return
                 print("Top Middle")
                 midpoint.x = (((self.width / 3) + (self.width * (2 / 3))) / 2)
                 self.grid[0][1] = self.turn
 
             elif event.x <= self.width:
+                if self.grid[0][2] != '-':
+                    print("Cannot Place!\nTry Again!")
+                    return
                 print("Top Right")
                 midpoint.x = (((self.width * (2 / 3)) + self.width) / 2)
                 self.grid[0][2] = self.turn
@@ -75,16 +84,25 @@ class Game:
             midpoint.y = ((self.height / 3) + (self.height * (2 / 3))) / 2
 
             if event.x <= (self.width / 3):
+                if self.grid[1][0] != '-':
+                    print("Cannot Place!\nTry Again!")
+                    return
                 print("Centre Left")
                 midpoint.x = 0 + (self.width / 3) / 2
                 self.grid[1][0] = self.turn
 
             elif event.x <= (self.width * (2 / 3)):
+                if self.grid[1][1] != '-':
+                    print("Cannot Place!\nTry Again!")
+                    return
                 print("Centre Middle")
                 midpoint.x = (((self.width / 3) + (self.width * (2 / 3))) / 2)
                 self.grid[1][1] = self.turn
 
             elif event.x <= self.width:
+                if self.grid[1][2] != '-':
+                    print("Cannot Place!\nTry Again!")
+                    return
                 print("Centre Right")
                 midpoint.x = (((self.width * (2 / 3)) + self.width) / 2)
                 self.grid[1][2] = self.turn
@@ -93,16 +111,25 @@ class Game:
             midpoint.y = ((self.height * (2 / 3)) + self.height) / 2
 
             if event.x <= (self.width / 3):
+                if self.grid[2][0] != '-':
+                    print("Cannot Place!\nTry Again!")
+                    return
                 print("Bottom Left")
                 midpoint.x = 0 + (self.width / 3) / 2
                 self.grid[2][0] = self.turn
 
             elif event.x <= (self.width * (2 / 3)):
+                if self.grid[2][1] != '-':
+                    print("Cannot Place!\nTry Again!")
+                    return
                 print("Bottom Middle")
                 midpoint.x = (((self.width / 3) + (self.width * (2 / 3))) / 2)
                 self.grid[2][1] = self.turn
 
             elif event.x <= self.width:
+                if self.grid[2][2] != '-':
+                    print("Cannot Place!\nTry Again!")
+                    return
                 print("Bottom Right")
                 midpoint.x = (((self.width * (2 / 3)) + self.width) / 2)
                 self.grid[2][2] = self.turn
