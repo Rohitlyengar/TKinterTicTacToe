@@ -1,4 +1,7 @@
 from shapes import Point, Cross
+from tkinter import messagebox
+import os
+import sys
 
 class Game:
     def __init__(self, win, width, height):
@@ -143,11 +146,9 @@ class Game:
             self.win.draw_circle(midpoint.x, midpoint.y, "black")
 
         if self.check_X_winner(self.grid):
-            print("X Wins!")
-            return
+            self.end_game()
         if self.check_O_winner(self.grid):
-            print("O Wins!")
-            return
+            self.end_game()
 
         if self.turn == 'X':
             print("\nO's Turn!")
@@ -155,3 +156,12 @@ class Game:
             print("\nX's Turn!")
 
         self.turn = 'O' if self.turn == 'X' else 'X'
+
+    def end_game(self):
+        messagebox.showinfo(message="X WINS!!!")
+        choice = messagebox.askokcancel(message="Do you want to play again?")
+        if choice:
+            python = sys.executable
+            os.execv(python, ['python'] + sys.argv)
+        else:
+            self.win.close()

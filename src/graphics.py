@@ -36,3 +36,6 @@ class Window:
 
     def draw_circle(self, x, y, fill_color):
         self.__canvas.create_oval(x - 50, y - 50, x + 50, y + 50, outline=fill_color, width=2)
+
+    def restart_game(self):
+        self.__isRunning = False
