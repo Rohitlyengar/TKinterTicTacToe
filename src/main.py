@@ -12,9 +12,10 @@ def main():
     grid = Grid(win, width, height)
     grid.create_grid()
 
+    print("X's Turn!")
+
 
     win.wait_for_close()
-
 
 if __name__ == '__main__':
     main()
