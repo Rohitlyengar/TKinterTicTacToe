@@ -1,16 +1,19 @@
 from tkinter import *
+from gameplay import Game
 
 class Window:
     def __init__(self, width, height):
         self.width = width
         self.height = height
+        self.game = Game(self.width, self.height)
         self.__root = Tk()
         self.__root.minsize(self.width, self.height)
+        self.__root.title("Tic Tac Toe")
+        self.__root.protocol("WM_DELETE_WINDOW", self.close)
+        self.__root.bind("<Button-1>", self.game.mouse_click)
         self.__canvas = Canvas(self.__root, width=self.width, height=self.height)
         self.__canvas.pack(fill=BOTH, expand=True)
-        self.__root.title("Tic Tac Toe")
         self.__isRunning = False
-        self.__root.protocol("WM_DELETE_WINDOW", self.close)
 
     def redraw(self):
         self.__root.update_idletasks()
