@@ -1,4 +1,4 @@
-from graphics import Point, Line
+from shapes import *
 class Grid:
     def __init__(self, win, width, height):
         self.win = win

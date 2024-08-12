@@ -1,8 +1,11 @@
+from shapes import *
+
 class Game:
-    def __init__(self, width, height):
+    def __init__(self, win, width, height):
         self.turn = True
         self.width = width
         self.height = height
+        self.win = win
 
     def mouse_click(self, event):
 
@@ -30,3 +33,5 @@ class Game:
             elif event.x <= self.width:
                 print("Bottom Right")
 
+        cross = Cross(event.x, event.y)
+        self.win.draw_cross(cross, "black")
